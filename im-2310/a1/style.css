@@ -14,7 +14,7 @@ body{
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-p {
+#question{
     color: darkgoldenrod;
     text-decoration: underline;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -62,3 +62,5 @@ a:hover{
 a:active {
     color:lightgreen
 }
+
+
