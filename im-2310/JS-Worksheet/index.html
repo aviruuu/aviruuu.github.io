@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>JavaScript</title>
+
+  <link rel="icon" type="image/png" href="favicons/favicon-32x32.png">
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <script src="script.js"></script>
+
+</head>
+
+<body>
+
+  <h1>Programming with JavaScript</h1>
+
+  <nav>
+
+    <div class="dropdown">
+
+      <div class="menu-icon">
+        <div class="menu-icon-bar1"></div>
+        <div class="menu-icon-bar2"></div>
+        <div class="menu-icon-bar3"></div>
+      </div>
+
+      <div class="dropdown-content">
+        <a href="#keyterms">Key Terms for Programming with JavaScript</a>
+        <a href="#dom">JavaScript and the HTML DOM</a>        
+        <a href="#where">Where does my JavaScript go?</a>
+        <a href="#statements">JavaScript Statements</a>
+        <a href="#functions">JavaScript Functions</a>
+        <a href="#variables">JavaScript Variables</a>
+        <a href="#objects">JavaScript Objects - Properties & Methods</a>
+        <a href="#events">DOM Events</a>
+        <a href="#what">What else can I do with JavaScript?</a>
+      </div>
+
+    </div>
+
+  </nav>
+
+  <main>
+
+    <section id="keyterms" class="sections">
+
+      <h2>Key Terms for Programming with JavaScript</h2>
+
+      <p>
+        JavaScript is an object oriented scripting language and as such employs a number of the standard programming features and concepts listed below. All of the 
+        following will be discussed in further detail in the sections below but to introduce them quickly:
+      </p>
+
+      <h3>Statements</h3>
+
+      <p>The coding equivalent of a sentence – a complete section of code completed with a semicolon that performs an action.</p>
+
+      <p>Statements can vary quite a bit, but a very simple statement might look like this:</p>
+
+      <code>
+        x = 16;
+      </code>
+
+      <h3>Variables</h3>
+
+      <p>Variables are containers used to store and retrieve values.</p>
+
+      <p>The following two statements define and then set the value of a variable:</p>
+
+      <code>
+        let x;
+        <br>
+        x = 16;
+      </code>
+
+      <h3>Functions</h3>
+
+      <p>Functions execute a list of statements, and often they are used to group these actions together in a specific order.</p>
+
+      <p>An empty function might look like this:</p>
+
+      <code>
+        function exampleFunction() {
+        <br>
+        <br>
+        }
+      </code>
+
+      <h3>Parameters</h3>
+
+      <p>
+        One or more comma separated variables that are written in between a function's parentheses. Parameters change how a function works each time it runs. Some 
+        functions use parameters, but not all do.
+      </p>
+
+      <p>A function with two parameters might look like this:</p>
+
+      <code>
+        function exampleFunction(myParameter1, myParameter2) {
+        <br>
+        <br>
+        }
+      </code>
+
+      <h3>Block</h3>
+
+      <p>A section of code that is run together – defined by using curly brackets.</p>
+
+      <p>This example function's block includes three separate statements that will then execute in the order written every time the function is run:</p>
+
+      <code>
+        function exampleFunction(myParameter1, myParameter2) {
+        <br>
+        &nbsp;&nbsp;let x = myParameter1 + myParameter2;
+        <br>
+        &nbsp;&nbsp;x *= 2;
+        <br>
+        &nbsp;&nbsp;return x;
+        <br>
+        }
+      </code>
+
+      <h3>Objects</h3>
+
+      <p>JavaScript objects are collections of named information which we can use methods to interact with in a range of ways.</p>
+
+      <p>Most types of variables and all HTML elements are objects which allows us to dynamically change them.</p>
+
+      <p>
+        In the example below the text value "patrick" becomes an object when it is assigned to myName variable. Once it becomes an object can we then run the 
+        toUpperCase() method which will return the text in all caps:
+      </p>
+
+      <code> 
+        let myName = "patrick";
+        <br>
+        myName.toUpperCase();      
+      </code>
+
+      <h3>Methods</h3>
+
+      <p>
+        Methods are built in functions that objects can run – they are used by typing the object name followed by a . and then the desired method and a set of 
+        brackets.
+      </p>
+
+      <p>These two statements declare myName as a variable and then run the toUpperCase() method on that variable object:</p>
+
+      <code>
+        let myName = "patrick";
+        <br>
+        myName.toUpperCase();
+      </code>
+
+      <h3>Naming in JavaScript w/ camelCase</h3>
+
+      <p>
+        When naming variables and functions it is standard practice to use camelCase - this refers to a style of writing phrases with multiple words without using 
+        spaces. It involves starting the phrase with a lower case letter and using an uppercase letter at the start of each subsequent word - eg: 
+        thisIsWrittenInCamelCase.
+      </p>
+
+      <p>
+        You can choose whatever name you want for variables and functions as long as it doesn't start with a number or match a reserved keyword. Best practice is to be 
+        descriptive with your names, for example if I was to write a function that multiplies two numbers together calling it something like multiplyTwo is much better 
+        than something generic like myFunction.
+      </p>
+
+    </section>
+
+    <section id="dom" class="sections">
+
+      <h2>JavaScript and the HTML DOM</h2>
+
+      <p>
+        When a browser turns your code into a web page it creates a dynamic model called the HTML DOM (Document Object Model). The DOM takes the form of a tree 
+        of objects, as you can see in the image here.
+      </p>
+
+      <!-- The image below is from the W3S article JavaScript HTML DOM - https://www.w3schools.com/js/js_htmldom.asp -->
+      <img src="images/htmltree.gif" alt="A diagram of the document object model">
+
+      <p>As HTML elements in the DOM are objects JavaScript can be used to manipulate them, allowing you to dynamically change web pages.</p>
+
+      <p>For example:</p>
+
+      <p>JavaScript can dynamically change all of the HTML elements on the page.</p>
+      <p>JavaScript can dynamically change all of the HTML attributes on the page.</p>
+      <p>JavaScript can dynamically change all of the CSS styles on the page.</p>
+      <p>JavaScript can remove existing HTML elements and attributes.</p>
+      <p>JavaScript can add new HTML elements and attributes.</p>
+      <p>JavaScript can react to all existing HTML events on the page.</p>
+      <p>JavaScript can create new HTML events on the page.</p>
+
+      <p class="task-highlight">
+        <strong>Task:</strong> Try out some basic the examples of manipulating the HTML DOM <a href="https://www.w3schools.com/js/js_intro.asp" target="_blank">here</a> 
+        on w3schools.
+      </p>
+
+    </section>
+
+    <section id="where" class="sections">
+
+      <h2>Where Does My Javascript Go?</h2>
+
+      <p>
+        Much like CSS, JavaScript can be writen inline in a HTML attribute, internally inside the &lt;script&gt; tag and in external text 
+        files with the .js extension.
+      </p>
+
+      <p>Here is an example of each, try them out and view the source code of this page to see the differences:</p>
+
+      <h3>Inline</h3>
+
+      <p>The HTML button element below has an attribute called onclick whose value contains a JavaScript statement.</p>
+
+      <button onclick="document.getElementById('demo1').innerHTML = 'Here is some different text!'">Try it</button>
+
+      <p id="demo1">Here is some text.</p>
+
+      <h3>Internal Scripts</h3>
+
+      <p>
+        In this example the JavaScript statement is instead declared (defined) as part of a function inside of a &lt;script&gt; tag. I've called this function 
+        timeJokeFunction which I can then call by the referencing its name in the button below's onclick attribute.
+      </p>
+
+      <script>
+
+        function timeJokeFunction() {
+          document.getElementById("demo2").innerHTML = "A waste of time.";
+        }
+
+      </script>
+
+      <button onclick="timeJokeFunction()">Try it</button>
+
+      <p id="demo2">What do you call a clock on a persons belt?</p>
+
+      <p>
+        Internal &lt;script&gt; tags can be included inside of either the &lt;head&gt; or &lt;body&gt; of the document but will be loaded at different times as a 
+        result - choose deliberately.
+      </p>
+
+      <h3>External scripts</h3>
+
+      <p>
+        Once again we are declaring our JavaScript statement as part of a function but this time that function is written inside of an external JavaScript file. To import
+        this file we use the same &lt;script&gt; tag as in the above example except instead of writing our JavaScript directly inside we're importing the external file 
+        using the src attribute. Once imported this function can again be called in the same way as our internal script by referencing its name in the button's onclick 
+        attribute.
+      </p>
+
+      <script src="./buttondemo.js"></script>
+
+      <button onclick="myExternalFunction()">Try it</button>
+
+      <p id="demo3">Is everyone still awake?</p>
+
+      <hr>
+
+      <p>
+        It is often convenient to include Javascript inline or internally - however along with making things easier to read and maintain, external scripts can be cached 
+        on their own can help speed up page loads.
+      </p>
+
+    </section>
+
+    <section id="statements" class="sections">
+
+      <h2>JavaScript Statements</h2>
+
+      <p>JavaScript statements are single instructions to do something. Depending on what you're trying to do they might include:</p>
+        
+      <ul>
+
+        <li><a href="https://www.w3schools.com/js/js_variables.asp" target="_blank">variables</a></li>
+
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#data_structures_and_types" target="_blank">values</a></li>
+
+        <li><a href="https://www.w3schools.com/js/js_operators.asp" target="_blank">operators</a></li>
+
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#keywords" target="_blank">keywords</a></li>
+
+        <li>and/or <a href="https://www.w3schools.com/js/js_comments.asp" target="_blank">comments</a></li>
+
+      </ul>
+        
+      <p>While the actual parts may vary they always end with a semi-colon.</p>
+
+      <p>It is common for JavaScript statements to look something like this:</p>
+      
+      <code>
+        // this changes the text inside the element with the id of testID
+        <br>
+        document.getElementById("testID").innerHTML = "Hello World";
+      </code>
+
+      <p>or this:</p>
+        
+      <code>
+        // this returns the value of the variable x
+        <br>
+        return x;
+      </code>
+
+      <p>or this:</p>
+        
+      <code>
+        // this calls the function called myFunction with arguments of 3 and 12
+        <br>
+        myFunction(3, 12);  
+      </code>
+
+      <p>
+        Like a sentence in any other language there are many forms the structure or syntax of a statement might take, the important thing is that they express a single 
+        instruction, though that instruction might have several stages. While not essential to its operation it is standard practice to end your statement using a 
+        semi-colon and to start a new line in your code before starting the next one so you can easily read where one ends and the new statement begins.
+      </p>
+
+    </section>
+
+    <section id="functions" class="sections">
+
+      <h2>JavaScript Functions</h2>
+
+      <p>
+        JavaScript functions are blocks of code, commonly made up of multiple statements, that 'do' something - once <strong>defined</strong> functions can be 
+        <strong>called</strong> as often as you like.
+      </p>
+
+      <p>While we can run JavaScript statements by themselves, for example by directly writing them into a HTML event attribute it is also possible to call - load and 
+        run - a JavaScript function.
+      </p>
+
+      <p>Below is an example of a function definition:</p>
+
+      <code>
+        function myExternalFunction() {
+          <br>
+          &nbsp;&nbsp;document.getElementById("demo3").innerHTML = 'Zzzzz';
+          <br>
+         }
+      </code>
+
+      <ul>
+
+        <li>First we use a keyword to tell the computer that we're defining a function - the keyword is the word function</li>
+
+        <li>
+          Next we give our function a name - in this case myExternalFunction. You can call your function whatever you want be each name should be unique in your 
+          project.
+        </li>
+
+        <li>Next we write a pair of parentheses - if we want to declare some parameters (see below) this is where we'll put them</li>
+
+        <li>Finally we write some curly brackets to define the code block that we want to run when the function is executed</li>
+
+      </ul>
+
+      <p>
+        Function <strong>parameters</strong> set what <strong>arguments</strong> the function can receive in the form of <strong>values</strong>, which are then stored 
+        as local <strong>variables</strong>. Like the unique name you give your function, parameter's names are chosen by you and can be whatever you like as long as no 
+        two parameters share the same name. Functions often don't have any parameters, such as in the examples above, but if they do multiple parameters can be added at 
+        the same time by separating them with commas.
+      </p>
+
+      <p>
+        Functions can also include a <strong>return</strong> statement - in such cases the function will stop when it reaches the return keyword and return a statement 
+        to the caller. Again functions often don't have a return statement, it'll depend on the specifics of what you want the function to do.
+      </p>
+
+      <p>
+        This might seem like a lot of moving parts but it's not so bad in practice - for example, the function written below takes in three separate parameters - 
+        <em>a</em>, <em>b</em> and <em>c</em> - and calculates the result of adding the three parameters together using the <strong>expression</strong> a+b+c:
+      </p>
+
+      <code>
+        function myCalculator(a, b, c) {
+        <br>
+        &nbsp;&nbsp;return a + b + c;
+        <br>
+        }
+      </code>
+      
+      <p>  
+        Functions like this that use a return statement can be called by declaring a <strong>variable</strong>, which then stores the results and can be used to 
+        represent it - using the above function it would look like this:
+      </p>
+
+      <code>  
+        let c = myCalculator(3, 2, 1);
+      </code>
+
+      <p>
+        Remember you only ever define each function once using by using the word 'function' - after which you can call that function as many times as you want using its 
+        name followed by the <strong>operator</strong> ().
+      </p>      
+
+      <p class="task-highlight">
+        <u>Task:</u> Both of the buttons below currently have the same addThree function assigned as part of their onclick event. In the &lt;script&gt; tag where 
+        addThree is written define a new function that will instead multiply two parameters together and then return the results. This function can be called whatever 
+        you like but it will need two parameters when you define it and will need to use the * operator instead of the + operator in its return statement.
+        <br> <br>
+        To test if it works find the section of the second button's inline JavaScript statement that calls addThree and swap it out for your new function, making sure 
+        to update the two argument values to 4 & 3. If working correctly clicking the second button should now return the expected number.
+      </p>
+
+      <script>
+
+        function addThree(a, b, c) {
+          return a + b + c;
+        }
+
+        function multiplyTwo(a, b) {
+          return a * b;
+        }
+
+      </script>
+
+      <button onclick="document.getElementById('demo5').innerHTML = addThree(3, 2, 1)">Click here to get the result of 3 + 2 + 1</button>
+
+      <p id="demo5"></p>
+
+      <br>
+
+      <button onclick="document.getElementById('demo6').innerHTML = multiplyTwo(4,3)">Click here to get the result of 4 * 3</button>
+
+      <p id="demo6"></p>
+
+      <br>
+
+    </section>
+
+
+    <section id="variables" class="sections">
+
+      <h2>JavaScript Variables</h2>
+
+      <p>
+        A JavaScript variable is an object we can create with its own specific name that can be used as a container to store a value, like some text or a number. 
+        Variables need to be defined the first time you reference them using a keyword, in this case let, followed by a unique name of your choice, such as in the 
+        example bellow:
+      </p>
+
+      <code>      
+        let myHairColour;
+      </code>
+
+      <p>When defined like this they don't contain any value and when queried will return:</p>
+        
+      <code>undefined</code>
+      
+      <p>
+        While you can assign them a value in later statements often you'll want to initialise a variable with a value which can be done using the equals operator as 
+        seen below:
+      </p>
+
+      <code>  
+        let myHairColour = "brown";
+      </code>
+
+      <p>
+        Like functions you can only define variables once, but once you have defined them using their unique name you can refer to them or reasssign their value as much 
+        as you want, such as the example below. I'm initialising my variable with the value "brown" then changing it to "blonde" in the next statement (note I only use 
+        <strong>let</strong> once when I define the variable, I don't need to use it when I'm changing that variable's value).
+      </p>
+
+      <code>
+        let myHairColour = "brown";
+        <br>
+        myHairColour = "blonde";
+      </code>
+
+      <p>
+        Remember that JavaScript is run sequentially - so if I was to write any new statements in between these two statements they would see the myHairColour as 
+        having the value of "brown" and any code written below the second statement would see its value as "blonde".
+      </p>
+
+      <hr>
+
+      <p>
+        Variables can store many different kinds of data and allow for different functionality (see methods below) based on what type of data they are storing. We'll be 
+        looking at more complex data types and information storage structures later in the semester, for now let's start with the two most basic types: numbers and 
+        strings.
+      </p>
+
+      <p>
+        <strong>Numbers</strong> - Variables can store two types of numbers, whole numbers like 23 (often reffered to as integers or ints) or numbers with a decimal 
+        place like 3.142 (often reffered to as floating point numbers or floats). JavaScript will work out which is which when you assign the number to a variable and 
+        there are some times where this distinction is important, such as when using an array, something we'll be covering in more detail in week 6.
+      </p>
+
+      <code>
+        // this is an int variable
+        <br>
+        let myAge = 34;
+        <br>
+        // this is a float variable
+        <br>
+        let coffesDrunk = 1.4;
+      </code>
+
+      <p>
+        <strong>Strings</strong> - Variables can also store text, called <em>strings</em>, which can be as long or short as you'd like. Unlike numbers strings need to 
+        be wrapped inside either single or double quote marks.
+      </p>
+      
+      <code>
+        // this is an acceptible string
+        <br>
+        let myHairColour = "brown";
+        <br>
+        // so is this
+        <br>
+        let myEyeColour = 'blue'; 
+      </code>
+
+      <p>
+        It's good practice to stick to using one or the other type of quote marks for defining strings as sometimes you'll need to nest them. In the example below I 
+        wanted to use a string inside of some inline JavaScript but because it's part of an attribute my browser will read the end of the value at the second " it sees. 
+        By alternating the type of quotes used the HTML will be able to understand the difference.
+      </p>
+
+      <code>
+        // this code can read the difference between the string and the attribute
+        <br>
+        &lt;button onclick="printString('mystring')"&gt;print&lt;/button&gt;
+        <br>
+        // this code thinks the onclick attribute ends after the (
+        <br>
+        &lt;button onclick="printString("mystring")"&gt;print&lt;/button&gt;
+      </code>
+
+    </section>
+
+    <section id="objects" class="sections">
+
+      <h2>JavaScript Objects - Properties & Methods</h2>
+
+      <p>
+        In JavaScript an object is a specific data type that refers to a collection of information accessible under a particular name. Variables and HTML elements are 
+        the most common type of object you'll deal with as you start to learn JavaScript. The information stored in an object is accessible as a property and they also 
+        inherit a number of generic functions called methods. We'll keep it simple to start with when working with objects but we'll dip into some more advanced uses 
+        as we progress this semester.
+      </p>
+
+      <h3>Object Properties</h3>
+
+      <p>
+        As mentioned this is how we access the information stored in an object - in the example below we're able to find the innerHTML property of a HTML element.
+      </p>
+
+      <code>
+        // this line uses a method (explained below) to find a HTML element in our HTML DOM and then saves that element as a variable
+        <br>
+        let testObject = document.getElementById("testID");
+        <br>
+        // this line then finds the innerHTML property of the testObject variable and saves it to its own variable
+        <br>
+        let testObjectString = testObject.innerHTML
+      </code>
+
+      <p>
+        As shown here properties are accessed by writing the name of the object follow by a . then the name of the property. In this case the innerHTML property will 
+        return whatever is written inside of the element, that might be a string of text or even other HTML elements. All HTML attributes are accessible as properties 
+        using the same name as the attribute and there are other useful properties 
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element#instance_properties" target="_blank">built in to all HTML element objects</a>.
+      </p>
+
+      <h3>Object Methods</h3>
+
+      <p>
+        JavaScript methods are predefined functions that are stored as a property of a JavaScript object - like functions you might write yourself methods are called 
+        by using their name (written in camel case) followed by a set of brackets that may or may not need argument values placed inside. Unlike functions they are can 
+        only be called in relation to an object - as shown in the example below this relationship is defined by naming the object first followed by the method with a 
+        dot in between:
+      </p>
+
+      <code>
+        document.getElementById("testID");
+      </code>
+
+      <p>
+        In this case we are calling the <strong>getElementById()</strong> <em>method</em> on the <strong>document</strong> <em>object</em>. <strong>document</strong> is 
+        a predefined object that represents <a href="#dom">the HTML DOM</a> - running the <strong>getElementById()</strong> <em>method</em> on it with an argument value 
+        of <em>"testID"</em> will look through each HTML element currently part of the HTML DOM and return the <strong>first</strong> element with an <em>id</em> 
+        attribute value of <em>"testID"</em>. By itself this method won't do anything once it finds that element however if we were to add the following:
+      </p>
+      
+      <code>
+        document.getElementById("testID").innerHTML = "Hello World";
+      </code>
+
+      <p>
+        we could change the <strong>innerHTML</strong> <em>property</em> (what's written inside that element) to the text "Hello World" by using the equals operator. .
+      </p>
+
+      <p>
+        To reiterate the above statement is first calling the <strong>getElementById()</strong> <em>method</em> on the <strong>document</strong> <em>object</em> and 
+        then changing the text inside the resulting element to "Hello World" by accessing the <strong>innerHTML</strong> <em>property</em>.
+      </p>
+
+      <p>
+        Different objects contain different methods and properties but while starting out using the <strong>getElementById()</strong> <em>method</em> to find an element 
+        and then changing that element's properties is one of the most common things you'll want to do.
+      </p>
+
+      <p class="task-highlight">
+        <u>Task:</u> Write a new function to change the text below from lower case to all upper case letters.
+        <br> <br>
+        In the &lt;script&gt; tag below I've already written a statement that retrieves the text string from the &lt;p&gt; tag and saves it in a variable called 
+        stringToCapitalise. You'll need to use this variable as an argument so make sure you define your function underneath it.
+        <br> <br>
+        Once you've defined your function (don't forget to include a parameter) you'll need to write a statement inside its block that will take the parameter and apply 
+        the appropriate method to change it to uppercase. 
+        <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Useful_string_methods" target="_blank">Here</a> is a list of common methods you 
+        can use when working with text strings.
+        <br> <br>
+        This method will only change the case of the variable not the innerHTML of the &lt;p&gt; so you'll then need to set this property. It's possible to combine these 
+        two steps into one statement but if you're have trouble try changing the parameter first then writting a separate statement to change the innerHTML - hint there 
+        are other examples elsewhere on this page showing how to change the innerHTML of an element with JavaScript.
+        <br> <br>
+        Finally once you've finished writing your new function you'll need to attach it to the onclick attribute of the button labeled "Make Upper Case" - don't forget 
+        to set the appropriate variable as the argument. If it is all working correctly clicking the button should now change the case of the text.
+      </p>
+
+      <p id="lowerCaseString">capitalise me</p>
+
+      <script>
+
+        let stringToCapitalise = document.getElementById("lowerCaseString").innerHTML;
+        
+        function capitalise () {
+         return()
+        }
+         
+        
+        
+      </script>
+
+      <button onclick= "stringToCapitalise.innerHTML = capitalise ('lowerCaseString')"> Make Upper Case</button>
+
+    </section> 
+    
+    <section id="events" class="sections">
+
+      <h2>DOM Events</h2>
+
+      <p>
+        JavaScript statements and functions can be executed (called) when an events occurs - this is what happens when a user clicks on a button that has an onclick 
+        attribute like in the examples above.
+      </p>
+
+      <p>The simple way to do this is by adding JavaScript code to a HTML element's appropriate event attribute (such as onclick).</p>
+<!-- !!! line reference -->
+      <p>
+        This process can also be done in a slightly different manner by using 
+        <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events#using_addeventlistener" target="_blank">Event Listeners</a> which are 
+        a more flexible and powerful way of working with events. We will cover these in more detail later in semester but you can see an example in the source code of 
+        this page on line 733.
+      </p>
+
+      <p class="task-highlight">
+        <strong>Task</strong> - Try adding an event attribute to the &lt;div&gt; below directly below this &lt;p&gt; that changes the background colour from pink to 
+        orange when the mouse enters the element.
+        <br> <br>
+        You'll need to find the appropriate event name from the 
+        <a href="https://www.w3schools.com/jsref/dom_obj_event.asp" target="_blank">list of events on w3schools</a> and add it as an attribute to the div (remember to 
+        add <em>on</em> to the start of the event's attribute name - eg the click event's attribute is named <em>onclick</em> not <em>click</em>). You'll also need to 
+        give the attribute a value, in this case the <em>inline</em> JavaScript statement below will do what you need.
+      </p>
+
+      <code>
+        this.style.backgroundColor = 'orange';
+      </code>
+
+      <div id="demo4"></div>
+
+    </section>
+
+    <section id="what" class="sections">
+
+      <h2>What Else Can I Do with JavaScript?</h2>
+
+      <p>Lots of things, but here's a few ideas to get you started.</p>
+
+      <h3>Comments</h3>
+
+      <p>
+        Like HTML and CSS <strong>comments</strong> should be an essential part of writing with JavaScript. Comments written in JavaScript are marked using // for a 
+        single line and /* with */ for multiple lines. See the source code below for an example
+      </p>
+
+      <script>
+        // this is a single line comment
+        /* 
+        anything that appears betweeen 
+
+
+        these
+        two is considered a comment too
+        
+        */
+      </script>
+
+      <h3>Get and Display the Date</h3>
+
+      <button onclick="document.getElementById('date').innerHTML = Date()">Get today's date</button>
+
+      <p>The Date() function gets the browser to return the date and time at the user's location.</p>
+
+      <p id="date"></p>
+
+      <h3>Manipulate Media Elements</h3>
+
+      <audio src="sounds/loop.mp3" loop nocontrols></audio>
+
+      <button id="musicOn">Let's have some background music</button>
+
+      <button id="musicOff" style="display:none">Make it stop!</button>
+
+      <p>
+        Take a look at the page source to see how the scripting for these buttons works - one is a function connected to an onclick and one is a function connected to 
+        an event listener.
+      </p>
+
+      <script>
+
+        document.getElementById('musicOn').onclick = function() {
+          var backgroundMusic = document.querySelector('audio');
+          backgroundMusic.play();
+          this.style.display = "none";
+          document.getElementById('musicOff').style.display = "block";
+        }
+
+        document.getElementById('musicOff').addEventListener("click", function() {
+          var backgroundMusic = document.querySelector('audio');
+          backgroundMusic.pause();
+          this.style.display = "none";
+          document.getElementById('musicOn').style.display = "block";
+        });
+
+      </script>
+
+      <h3>Hide and Show Elements</h3>
+
+      <div class="accordion" onmouseover="this.firstElementChild.style.display = 'block'" onmouseout="this.firstElementChild.style.display = 'none'">
+
+        [Hover to Read More]
+
+        <div id="myDIV" style="display:none;">
+
+          <p>Here is a div that I am hiding and showing using a JavaScript statement connected to the mouseover and mouseout events via their HTML attributes.</p>
+
+          <p>Notice in the code that I am using a two new things:</p>
+
+          <ol>
+
+            <li>
+              "this" which refers to the element the event attribute is connected to, in this case "this" will be the &lt;div&gt; element with the class of 
+              "accordion" that the mouseover and mouseout events are attached to using its attributes.
+            </li>
+
+            <li>
+              "firstElementChild" which gets the first element <em>child</em> inside of the element you are working with, in this case the first element child 
+              inside of what's referenced with "this" would be the &lt;div&gt; element with the id of "myDIV"
+            </li>
+
+          </ol>
+
+          <p>
+            This achieves a similar effect as the CSS that's used to hide/show the navigation menu, but is achieved instead through JavaScript events and 
+            inline stlye.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    </main>
+
+  </body>
+
+</html>

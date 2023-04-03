@@ -1,0 +1,20 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root{
+    --col01: rgb(0,0,0);
+    --col02:rgb(87,87,87);
+    --col03:rgb(184,184,184);
+    --col04:rgb(255,255,255);
+    --border: 10px solid var(--col02);
+}
+
+#box1{
+    height: 100px;
+    width: 100px;
+    background-image: radial-gradient (red 10%,blue 10%, green 10%)
+    background-color: var(--col01)
+}
+
