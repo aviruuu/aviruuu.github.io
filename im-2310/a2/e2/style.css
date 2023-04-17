@@ -1,0 +1,132 @@
+/* z-index order */
+
+*{
+  box-sizing: border-box;
+  background-origin: border-box;
+  margin: 0;
+}
+
+/* Basis for colour palette comes from 1bit Monitor Glow Palette by Polyducks */
+/* https://lospec.com/palette-list/1bit-monitor-glow */
+/* you're welcome to change the colours if you want or any of the other general page style */
+:root{
+  --col-01:#fdffff;
+  --col-02:#000000;
+  --col-03:#faa40e;
+  --col-04:#ffc721;
+  --border: 1px solid var(--col-02);
+}
+/* I'm going for a simple yet formal website themed. I believe that white and black are the best colours to give a simple look. I also decided to use a bit of gold and orange to add to that elegance, as it makes the website pop a bit. */
+
+body{
+  display: flex;
+  flex-direction: column;
+  background-color: var(--col-01);
+  color: var(--col-02);
+  padding: 2vw;
+}
+
+/* I added these flexboxes to add more aesthetic to my webpage by making it stick to a certain colour theme. I only added flexboxes for the link and a visited link because the color when you hover over the link was already fine. */
+.Title{
+  font-size: 45px;
+  font-family: 'Abril Fatface', cursive;
+}
+/*I thought this font that i found in Google Fonts was a very good choice for title. It makes the title stand out and gives it a cursive look.*/
+a:link {
+  color: #faa40e;
+}
+
+a:visited {
+  color: #f49510;
+}
+
+/*
+  i've set up a basic flexbox for each recipe container - you might want to change some of the 
+  flex properties here on the container or on the individual flex items depending on how you want to style them
+*/
+.RecipeBox{
+  display: flex;
+  flex-direction: column;
+  border: var(--border);
+  font-family: 'Anuphan', sans-serif;
+}
+
+.FilterSection{
+  display: flex;
+ background-color: #e8c65550;
+}
+/*I decided to sest their display to flex as i didn't like them going vertically down and in the middle. I liked them lined up together so that you can navigate through all of them.*/
+
+.FilterBox{
+}
+
+.FilterButton{
+  border:none;
+  outline: none;
+  background-color: #fbc67d;
+}
+
+.FilterButton:hover{
+  background-color: white;
+}
+/*I decided to change the colour of when the Filter Button is hovered over so people can see where there mouse is and can change their mind if they want*/
+
+.SelectedFilter{
+  
+}
+
+.RecipeLink{
+
+}
+
+.RecipeName{
+color: #f49510;
+}
+
+.Author{
+
+}
+
+.RecipeImageContainer{
+
+}
+
+.RecipeImg{
+max-width: 100%
+}
+
+/* i wanted to make the images fit in the containers so that it would look neat and tidy*/
+
+.Attribution{
+
+}
+
+.Publisher{
+
+}
+
+.Cuisine{
+
+}
+
+.TimeToCook{
+
+}
+
+.Servings{
+
+}
+
+.DatePublished{
+
+}
+
+.DateUpdated{
+
+}
+
+.SpecialEquipment{
+
+}
+
+/* I deleted the flexboxes that were used for the categories I have chosen to make filters of because I have deleted them from the recipe information*/
