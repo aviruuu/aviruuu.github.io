@@ -1,0 +1,237 @@
+/*
+  This one CSS file is imported into both index.html AND hosono.html so you need to be careful that it 
+  works for both.
+*/
+
+*{
+  box-sizing: border-box;
+  background-origin: border-box;
+  margin: 0;
+}
+
+:root{
+  /* first two colours come from Kuroi's Manga Pallete Palette */
+  /* https://lospec.com/palette-list/manga-pallete */
+  --col-01:#171219;
+  --col-02:#ffffff;
+  --col-03:#5252ff;
+  --col-04:#b6e878;
+  font-size: 16px;
+  /* scroll behaviour makes the <a> links to ids scroll to position over time rather than immediately */
+  scroll-behavior: smooth;
+}
+
+/*I changed --col-02 to white because i didn't like the greenish white colour.*/
+
+body{
+  padding: 1rem;
+  background-color: var(--col-02);
+  color: var(--col-01);
+  transition: 2s;
+}
+/*I added a transition to the swtichmodes () button, by adding transition in the body. I wanted it to be a slow transition, to make it satisfying to the eye when you switch modes, rather than just being instant.*/
+nav {
+  margin-top: 1rem;
+}
+
+nav li{
+  font-size: 1rem;
+}
+
+section{
+  margin-bottom: 2rem;
+}
+
+h1{
+  font-size: 3rem;
+}
+
+h2{
+  font-size: 2rem;
+}
+
+p{
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+figcaption{
+  width: fit-content;
+}
+
+dl ul{
+  margin-bottom: 0;
+}
+
+li{
+  font-size: 1rem;
+}
+
+dd{
+  padding-left: 60px;
+}
+
+li ul{
+  padding-left: 40px;
+}
+
+.img-wrapper{
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.img-figure{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.article-img{
+  width: 80%;
+}
+
+.res-columns{
+  column-width: 25rem;
+}
+
+nav ol li a {
+  color: var(--col-01);
+  text-decoration: none;
+  cursor: default;
+}
+
+/*i decided to put the code from the feedbackReset.css here so it would be right next to the mode button so it would be easier to navigate and go back to when i start to style it..*/
+
+nav ol li a:hover{
+  color: plum;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/*I also decided to add a :hover div to the list so that users can also see where there mouse if hovered over properly by the color changing from black to plum. I also added the cursor to change into a pointer to make it even more obvious.*/
+
+nav ol li a:active{
+  color: purple;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/*I also wanted to add feedback when you click on anything in the <li> to show users what they clicked on, by the text turning purple once they clicked it.*/
+
+
+#mode-button{
+  float: right;
+  /* note the use of position: sticky to keep the button on the page even with scrolling */
+  position: sticky;
+  top: 1rem;
+  border: 2px solid;
+  border-radius: 5px;
+  animation: modeChange 2s ;
+}
+/*I wanted to give the button a border to make it less plain are more easy to catch the eye of users by outlining the text. I also rounded the corners of the border to make it more inviting and not just sharp corners.*/
+
+@keyframes modeChange {
+  0%{
+    border-color: #171219;
+  }
+  50%{
+    border-color: #f2fbeb;
+  }
+}
+/*I used an animation to make the border of the button chance colour as well when it switches modes, this was the only way I could manage to make it change, by using an animation. I made sure that the border changing colour syncs with the page also changing state when i press the button. I decided to name the animation modeChange because I already used an animation for the loading screen and wanted to use black and white instead of colours.*/
+
+/* code for loading page */
+
+#load-body{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/* changing button to look like a link */
+#load-link{
+  line-height: 1rem;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer
+}
+
+#load-link:hover{
+ color: #5252ff;
+ transition: 2s;
+}
+/* i added div for the pseudo class :hover because i wanted it to be a different colour so users can tell that they are hovering over it clearly. i made a transition so that it takes 2 seconds for the it to turn purple, enough for the human eye to be able to focus on the text and see the colour change. I didn't want it to be too quick.*/
+
+/* throbber while page is fake loading */
+#load-throbber{
+  /* the width, height and background-color give it a shape on the page without any content inside - 
+  these value are arbitrary, please change to create your own design  */
+    height: 25px;
+  width: 25px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: plum;
+  animation: cycleColour 3s infinite ease-in alternate;
+  /* we also initially set display to none so it only shows once the link is clicked */
+  display: none;
+}
+
+/*i decided to change the load-throbber into a circle and use animation to make it cycle through different colours. i thought this would be a great way to show that it was loading rather than only using one colour. i also thought that a circle was more aesthetic than a plain old rectangle. I really liked example 6 from the motionTest.html because the way it was animated definitely matching a loading screen so I decided to use it for the load-throbber. */
+
+@keyframes cycleColour {
+  0% {
+    background-color: rgb(241, 148, 241);
+  }
+  25%{
+    background-color: rgb(250, 204, 89);
+  }
+  50% {
+    background-color: rgb(255, 47, 82);
+  }
+  75% {
+    background-color: rgb(166, 236, 182);
+  }
+  100% {
+  background-color: rgb(20, 163, 220);
+  }
+
+}
+
+/*I added keyframes for the animation of the load-throbber here. These colours were chosen by going through multiple colours on the colour wheel. I decided to go with these 5 colours at the end because i thought it would be nice to use a color each of the rainbow to make it eyecatching and nice to look at while the screen is loading. I wanted to make it less boring and make it a more asethetic experience to look at rather than making the feedback boring. I was debating also to add gradients to the load-throbber to make it more interesting but i realized that might be too much just for a simple load-throbber.*/
+
+/* Media Queries */
+
+/* medium devices 600 - 992 */
+@media only screen and (min-width: 600px) {
+  :root{
+    font-size: 20px;
+  }
+  
+  .img-wrapper{
+    width: 75%;
+    margin: 1.5rem auto;
+  }
+
+}
+
+/* medium devices 992 + */
+@media only screen and (min-width: 992px) {
+  :root{
+    font-size: 24px;
+  }
+
+  .img-wrapper{
+    max-width: fit-content;
+    float: right;
+    margin: 1.5rem;
+  }
+
+}
+
+@media (prefers-reduced-motion) {
+  :root{
+    scroll-behavior: auto;
+  }
+}
