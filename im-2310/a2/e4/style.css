@@ -12,10 +12,11 @@
   --col-02:#f0f6f0;
   --col-03:#5252ff;
   --col-04:#b6e878;
-  --col-05:#bcbdbc;
-  --col-06:#6f6f6f;
+  --col-05:#f7bbdf;
+  --col-06:#ff5dc4;
   --border: 1px solid var(--col-02);
 }
+/*I changed the colours 05 and 06 because i wanted to change the style of the buttons when they are active and hovered over. I wanted to keep the colours the same so I made it the root colours.I chose pink to match witht he video playing.*/
 
 .video-player-wrapper{
   display: flex;
@@ -70,6 +71,8 @@
 .video-control-button:active{
   background-color: var(--col-06);
 }
+
+/* I didn't need to add individual feedback to the fullScreenButton as it is a 'video control button'.*/
 .button-icon{
   pointer-events: none;
 }
@@ -83,8 +86,9 @@
 }
 
 #fullScreenButton{
-  background-image: url('./icons/fullScreen.svg') ;
+  background-image: url('./icons/fullScreen.svg');
 }
+
 .video-progress-bar{
   /* Reset the default appearance */
   -webkit-appearance: none;
@@ -106,8 +110,10 @@
   box-shadow: 0 1px 2px var(--col-02) inset;
 }
 ::-webkit-progress-value {
-  background-color: var(--col-02);
+  background-image: linear-gradient(to bottom right,var(--col-06),var(--col-05),var(--col-02)); 
 }
+/*I made changes to the progress bar by making the progress value a pretty graident from pink to white to match the video*/
+
 
 .timeline-loading{
   background-image: -moz-repeating-linear-gradient(45deg, var(--col-03) 0% 2%, transparent 2% 4%, red 4%);

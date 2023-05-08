@@ -164,31 +164,15 @@ function muteUnmute(){
 muteButton.addEventListener("click", muteUnmute);
 
 /*Fullscreen*/
-function startup(){
-videoElement.addEventListener("keypress", function(e) {
-  if (e.key === 'Enter'){
-    toggleFullScreen();
-  }
- }, false);
-}
-//i haven't add a 'addEventListener' for clicking the button yet because i'm just trying to make toggle full screen work //
-
 function toggleFullScreen(){
-  if(videoElement.fullscreenElement) {
-    //makes the video full screen because the video isn't in full screen mode
-    videoElement.requestFullscreen();
-  } else {
-    //exit the full screen
-    if (videoElement.exitFullscreen) {
-    videoElement.exitFullscreen();
+ videoElement.requestFullscreen();
    }
- }
-}
+   // after many attempts, it was brought to my attention that an if statement was unecessary to make it work like the mute and unmute function. As if I just write one line of code, the feature already tells the user than they can use the escape button to exit. There was no reason for me to add an if statement, if you could already exit. So i just wrote a simple line of code just to requestFullScreen.//
 fullScreenButton.addEventListener("click", toggleFullScreen);
+//I wanted to make that when you click the full screen button, the video would go into full screen. I orignally tried also doing something extra and coding that when you press enter it will also go into fullscreen but that didn't work. I thought it was unecessary anyway//
 
-//*add feedback for full screen*//
-
-/* HELPER FUNCTIONS */
+/*Reason for Feature*/
+//I decided to choose the fullscreen feature because I believe that this feature is the most important. As a person with glasses, I always put my videos on fullscreen when I watch it because it is comfortable for me and it lets me see the video in detail. It gives me the satisfaction, like I am watching on a big screen. I think full screen is important to get the users to avert the full attention to the video, to focus solely on it and nothing else. Also I think that having a fullscreen button is a must in media because it's become a kind of unconscious action that we are unaware of that we do it all the time. I always find myself pressing the fullscreen button anytime i watch something. Another reason is because it helps users to be comfortable to watch the video on this website from all devices. The feature allows users to still feel comfortable watching on small screesn like mobile phones instead of watching on a PC Monitor. I believe this is the most important feature to the overall usability of the app as a video player*/
 
 function clampZeroOne(input){
   return Math.min(Math.max(input, 0), 1);
