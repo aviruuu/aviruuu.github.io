@@ -1,0 +1,67 @@
+*{
+    box-sizing: border-box;
+    background-origin: border-box;
+    margin: 0;
+    flex: grid;
+}
+
+:root{
+    --col-01:#222323;
+    --col-02:#f0f6f0;
+    --col-03:#5252ff; 
+    --col-04:#b6e878;
+
+}
+
+img{
+    height: 225px;
+    width: 180px;
+    position: fixed;
+}
+
+img:hover{
+    cursor: pointer;
+}
+/*When you click on the bubble, it easily tells you that you are on a bubble by the cursor changing. I decided to only put this as feedback in css and focus on javascript feedback for more of a playful outcome*/
+
+#videoElement {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+/* Add some content at the bottom of the video/page */
+.content {
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+  }
+
+/*This is for the video to take up full screen and be in the background*/
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+
+
+/*overlay colour */
+#modalDialog::backdrop{
+  background-color: rgba(101, 186, 255, 0.418);
+}
+
+
+
+
+
+
+
+  

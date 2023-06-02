@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+
+        <meta charset="utf-8" name="viewport" content="width=device-width, inital-scale=1.0">
+
+        <link rel="stylesheet" href="style.css">
+
+        <title>Reminisce</title>
+
+  </head>
+
+  <body>
+
+    
+  <!--The video -->
+    <video autoplay muted loop id="videoElement">
+    <source src="the little things that excite my heart â__ a short film.mp4" type="video/mp4">
+    </video> 
+
+
+  <!--Overlay text-->
+ <div class = "content">
+  <h1> Reminisce</h1>
+  <p> devol era uoy taht tegrof reven esaelp...</p>
+  <!-- here we're using the dialog element to hold our modal -->
+  <dialog id="modalDialog">
+
+    <button id="closeModal">Close</button>
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>My interaction design titled <em> Reminisce </em> was created based on my choice of <i> playful </i> and <i> feedback </i> as my adjective/principle pairing. I was immediately drawn to the word playful because I like fun and entertaining interactive websites more than informative ones. When I think of playful, I think of fun, amusing, game-like and light-hearted words. I enjoyed coding the feedback assignments, and playful feedback would be interesting to try and make. In this case, feedback is a gift or reward because of a positive user interaction. My approach to these words was a light-hearted and calm interactive website surrounded by colourful bubbles that each represent a memory. By clicking on a bubble, the bubble will pop and the video in the background will play a fraction of a memory. Hopefully, by the end, the user will realise they need to click the bubbles correctly to showcase the full video. I chose bubbles because of their fragile nature; the bubble is often seen as a symbol of the brevity or transience of life. By popping a bubble, you release joy into the user's life or free a forgotten memory. I decided to make the bubbles all the same design and used the requestAnimationFrame to make the bubbles float around. I designed the bubbles in the drawing app <i> Procreate </i>. During the presentation, I said that by clicking on the bubbles, they would each play a fragment of the video; however, while coding this assignment, I found it challenging to find out how to do that in a small fraction of time. Instead, I decided to have the same concept but do a different idea instead. I went to YouTube and found a creative video that fits the theme of reminiscing and good memories, which I will credit below. I decided to keep the video in the background still, but the bubbles didn’t control it. It will just be playing in the background. The Bubbles will instead play single words that users must find in order. I was also going to code a reset button, but it kept getting hidden by the video playing in the background. I recorded the videos using google translate. I kept the idea of the bubbles being fragments of something; the final idea I chose was words that were part of a quote that I like to remember to make me happy. The idea of popping bubbles and having some puzzles accurately resembles playfulness. For feedback, I relied on the reward you get from clicking on the bubble. The only CSS feedback included is the hover, as I relied on JavaScript feedback to emphasise the playful aspect. When you click on the bubble, it changes into a popping image and makes a sound. Seeing the bubble pop makes people’s hearts flutter, so I hope the words created by the bubble will make people happy too. Also, I made the quote short on purpose so that users could figure it out quickly, and I wrote the section backwards underneath the heading of the interactive website.
+      </p>
+
+     <p> Resources:
+
+      Bubble Pop
+      YehawSnail
+      https://freesound.org/people/YehawSnail/sounds/683587/
+      Creative Commons 0
+      </p>
+      <p>
+      Akzhunis Kunanbai.(2019, July 30). Aesthetic video🌱🍃[Video File]. Youtube. https://www.youtube.com/watch?v=bwfTPlOQQQk
+      </p> 
+    
+    </div>
+  </dialog>
+
+  <button id="showModal">/info/</button>
+ </div>
+  <!-- This whole section is for the modal where i will put my 500 words describing my choices for this assignment-->
+
+  <!--Bubbles-->
+    <img id="bubble-1" src="/images/bubble.png"  onclick="changeImage(this), play5()"> 
+    <img id="bubble-2" src="/images/bubble.png"  onclick="changeImage(this), play3()"> 
+    <img id="bubble-3" src="/images/bubble.png"  onclick="changeImage(this), play1()"> 
+    <img id="bubble-4" src="/images/bubble.png"  onclick="changeImage(this), play6()"> 
+    <img id="bubble-5" src="/images/bubble.png"  onclick="changeImage(this), play2()"> 
+    <img id="bubble-6" src="/images/bubble.png"  onclick="changeImage(this), play7()"> 
+    <img id="bubble-7" src="/images/bubble.png"  onclick="changeImage(this), play4()"> 
+
+    <!-- These are are the bubbles that I am using. I decided to go with 7. They all use the same picture but also here you can see what happens when the bubble is clicked-->
+ 
+    <!--sound effects-->
+    <audio id="please" src="Please.m4a" type="audio/m4a">
+    <audio id="never" src="Never.m4a" type="audio/m4a">
+    <audio id="forget" src="Forget.m4a" type="audio/m4a">
+    <audio id="that" src="That.m4a" type="audio/m4a">
+    <audio id="you" src="You.m4a" type="audio/m4a">
+    <audio id="are" src="Are.m4a" type="audio/m4a">
+   <audio id="loved" src="Loved.m4a" type="audio/m4a">
+  
+
+  <!--These are my recorded sound effects that are readings of one single word each that I use for feedback-->
+
+
+
+    <script src="script.js"></script>
+    
+
+    </body>
