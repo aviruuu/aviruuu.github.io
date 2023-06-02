@@ -100,7 +100,7 @@ function play7(){
 
 /*Changing Image*/
 function changeImage(image){
-    image.src= './images/bubble popping.png';
+    image.src= '/images/bubble popping.png';
 }
 
 /*This is what allows the bubble to change into the bubble popping image everytime it is clicked. I thought of also adding java script to make it also disappear when it is clicked but i thought that would be quite difficult.*/
